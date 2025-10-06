@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invest Fácil</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+      * {
+      font-family: 'Sora', sans-serif;
+    }
+    body {
+      background-color: #242323;
+      color: white;
+      padding-top: 80px; 
+    }
+
+    /* Navbar */
+    .btn-login {
+      background-color: #7DFF01;
+      color: black;
+      font-weight: bold;
+    }
+
+    /* Modais */
+    .modal-content {
+      border-radius: 12px;
+      padding: 15px;
+    }
+    .modal-header {
+      border-bottom: none;
+    }
+    .btn-close-custom {
+      background-color: #7DFF01;
+      border-radius: 50%;
+      padding: 10px;
+    }
+    .btn-submit {
+      background-color: #7DFF01;
+      color: black;
+      font-weight: bold;
+    }
+    .link-custom {
+      color: #000000;
+      font-size: 0.9rem;
+    }
+
+    /* Hero Section */
+    .hero-title {
+      font-size: 3rem;
+      font-weight:lighter;
+      color: #7DFF01;
+    }
+    .hero-subtext {
+      color: #ffffff;
+      font-size: 1.2rem;
+    }
+
+    /* Antes de começar */
+    .card-custom {
+      position: relative;
+      border-radius: 15px;
+      padding: 30px;
+      background-color: #ffff;
+      width: 90%;
+      max-width: 1200px;
+      margin: 60px auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      color: #548723;
+      text-align: center;
+    }
+
+    .header-banner {
+      background-color: #548723;
+      color: white;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 12px;
+      display: inline-block;
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    .glossario-title {
+      border-radius: 15px;
+      padding: 30px;
+      background-color: #548723;
+      width: 70%;
+      max-width: 1200px;
+      margin: 40px auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      color: #ffffff;
+    }
+
+    /* Accordion */
+    .accordion-button {
+      background-color: #1a1919;
+      color: #f5f4f4;
+      font-weight: bold;
+    }
+    .accordion-button:not(.collapsed) {
+      background-color: #2b2a2a;
+      color: #fff;
+    }
+    .accordion-body {
+      background-color: #f9f9f9;
+      color: #030303;
+    }
+    .accordion-item {
+      border-radius: 10px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Estilos dos FIIs */
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding-top: 2rem;
+    }
+
+    .main-title {
+      font-size: 4rem;
+      font-weight: 800;
+      color: #7DFF01;
+      text-shadow: 0 0 10px rgba(125, 255, 1, 0.3);
+      margin-bottom: 0.5rem;
+    }
+
+    .table-container {
+      background-color: #717274;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .metrics-header {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      background-color: rgba(30, 30, 30, 0.8);
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      font-size: 1.1rem;
+    }
+
+    .fii-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+      gap: 1rem;
+      padding: 1.5rem;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      color: #FFFFFF;
+      transition: all 0.3s ease;
+      align-items: center;
+    }
+
+    .fii-row:hover {
+      background-color: rgba(125, 255, 1, 0.1);
+      border-color: #7DFF01;
+      transform: translateY(-2px);
+    }
+
+    .fii-ticker {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 0.25rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .fii-name {
+      font-size: 0.9rem;
+      color: #CCCCCC;
+      margin: 0;
+      margin-left: 2rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .building-icon {
+      color: #7DFF01;
+      font-size: 1.3rem;
+      text-shadow: 0 0 8px rgba(125, 255, 1, 0.5);
+      flex-shrink: 0;
+    }
+
+    .metric-value {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .pagination-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 3rem;
+      gap: 1.5rem;
+    }
+
+    .page-btn {
+      background-color: #7DFF01;
+      color: #1E1E1E;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+    }
+
+    .page-btn:hover:not(:disabled) {
+      background-color: #6CE600;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(125, 255, 1, 0.4);
+    }
+
+    .page-btn:disabled {
+      background-color: #4A4A4A;
+      color: #888888;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .page-info {
+      font-weight: 700;
+      color: #FFFFFF;
+      font-size: 1.1rem;
+    }
+
+    /* Radar do Mercado */
+    .radar-mercado .fii-row.radar-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      padding: 1rem !important;
+      margin-bottom: 0.5rem !important;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.05);
+      align-items: center;
+    }
+
+    .radar-mercado .fii-ticker {
+      font-size: 1.1rem !important;
+      justify-content: start !important;
+      margin-bottom: 0 !important;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .radar-mercado .metric-value {
+      font-size: 1.1rem !important;
+      text-align: center !important;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .text-success,
+    .text-warning,
+    .text-info {
+      color: #FFFFFF !important;
+      font-weight: bold;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .metrics-header,
+      .fii-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        text-align: center;
+      }
+      
+      .fii-ticker {
+        justify-content: center;
+      }
+      
+      .fii-name {
+        margin-left: 0;
+      }
+      
+      .main-title {
+        font-size: 2.5rem;
+      }
+      
+      .radar-mercado .fii-row.radar-row {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-title {
+        font-size: 2rem;
+      }
+      
+      .hero-subtext {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3 fixed-top">
+    <a class="navbar-brand" href="#">Invest<br>Fácil</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="aprendaDropdown" role="button" data-bs-toggle="dropdown">
+            Aprenda do zero
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#aprenda">Iniciante</a></li>
+            <li><a class="dropdown-item" href="#aprenda">Intermediário</a></li>
+            <li><a class="dropdown-item" href="#aprenda">Avançado</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#fiis">Mercado</a></li>
+        <li class="nav-item"><a class="nav-link" href="#fiis">FIIs (valores/relatórios)</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Notícias</a></li>
+        <li class="nav-item"><a class="nav-link" href="#radar">Radar do mercado</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Carteira</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="simuladorDropdown" role="button" data-bs-toggle="dropdown">
+            Simulador
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Simulação de investimentos</a></li>
+            <li><a class="dropdown-item" href="#">Simulação de gastos</a></li>
+          </ul>
+        </li>
+      </ul>
+      <button class="btn btn-login" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+    </div>
+  </nav>
+
+  <!-- LOGIN -->
+  <div class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title">Login</h5>
+          <button type="button" class="btn-close btn-close-white btn-close-custom" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" class="form-control mb-2" placeholder="Nome do usuário/ e-mail">
+          <input type="password" class="form-control mb-2" placeholder="Senha">
+          <button class="btn btn-submit w-100 mb-2">Logar</button>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="link-custom">Esqueci a senha</a>
+            <a href="#" class="link-custom" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Cadastre-se</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CADASTRO -->
+  <div class="modal fade" id="registerModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title">Cadastro</h5>
+          <button type="button" class="btn-close btn-close-white btn-close-custom" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" class="form-control mb-2" placeholder="Nome do usuário">
+          <input type="email" class="form-control mb-2" placeholder="E-mail">
+          <input type="password" class="form-control mb-2" placeholder="Senha">
+          <button class="btn btn-submit w-100 mb-2">Cadastrar</button>
+          <div class="d-flex justify-content-end">
+            <a href="#" class="link-custom" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Logar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="home" class="text-center py-5">
+    <div class="container">
+      <h1 class="hero-title">Invista com propósito,<br>comece com FIIs.</h1>
+      <p class="hero-subtext mt-3">
+        Aprenda a investir em Fundos Imobiliários de forma simples,<br>
+        sem enrolação e no seu ritmo.
+      </p>
+    </div>
+  </section>
+
+  <!-- QUEM SOMOS -->
+  <section class="py-5 bg-dark text-white">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-7">
+          <h2 class="fw-bold mb-3">Quem somos ?</h2>
+          <p style="color: #ccc;">
+            No Invest Fácil, nossa missão é tornar os investimentos acessíveis e descomplicados.
+            Oferecemos dicas práticas, ferramentas simples e conteúdos claros para ajudar você a
+            organizar sua carteira, entender o mercado e investir com confiança.
+          </p>
+        </div>
+        <div class="col-md-1 d-none d-md-block">
+          <div style="border-left: 2.5px solid #00ff55; height: 250px;"></div>
+        </div>
+        <div class="col-md-4 text-center">
+          <img src="img/invest-removebg-preview.png" alt="Logo Invest Fácil" class="img-fluid" style="max-width: 800px; width: 100%;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por que investir? -->
+  <section class="py-5 bg-dark text-white">
+    <div class="container">
+      <div class="row align-items-center">  
+        <div class="col-md-4 text-center mb-4 mb-md-0">
+          <img src="img/Gemini_Generated_Image_h8s8jsh8s8jsh8s8.png" alt="Logo Invest Fácil" class="img-fluid" style="max-width: 800px; width: 100%;">
+        </div>
+        <div class="col-md-1 d-none d-md-block">
+          <div style="border-left: 2.5px solid #00ff55; height: 250px;"></div>
+        </div>
+        <div class="col-md-7">
+          <h2 class="fw-bold mb-3"> Por que investir?</h2>
+          <p style="color: #ccc;">
+            Investir é essencial porque o dinheiro parado
+            perde valor com a inflação. Ao investir, você
+            preserva e multiplica seu patrimônio, cria
+            fontes de renda passiva e se prepara para
+            imprevistos e para o futuro. Além disso,
+            investir possibilita alcançar metas
+            financeiras de forma mais rápida e eficiente
+            do que apenas guardar dinheiro.
+          </p>
+        </div>      
+      </div>
+    </div>
+  </section>
+
+  <!-- Antes de começar -->
+  <div class="card-custom">
+    <div class="header-banner">
+      Antes de começar
+    </div>
+    <h2>O que são FIIs?</h2>
+    <p>
+      FIIs, ou Fundos de Investimento Imobiliário, são investimentos em que você compra cotas e se torna dono de uma parte de imóveis ou de títulos ligados ao mercado imobiliário. 
+      Em troca, recebe rendimentos mensais, que funcionam como um aluguel, além da possibilidade de valorização das cotas. 
+      É uma forma simples e acessível de investir em imóveis sem precisar comprar um inteiro.
+    </p>
+  </div>
+
+  <!-- Glossário -->
+  <section class="py-5 text-center">
+    <div class="container">
+      <div class="row g-3">
+        <h2 class="fw-bold glossario-title">Glossário</h2>
+
+        <div class="col-md-4">
+          <div class="card-glossario card h-100 shadow-sm d-flex align-items-center justify-content-center p-3">      
+            <h5 class="fw-bold">FII</h5>
+            <p>São fundos que investem em imóveis ou títulos ligados ao setor imobiliário. O investidor compra cotas e recebe rendimentos mensais.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card-glossario card h-100 shadow-sm d-flex align-items-center justify-content-center p-3">
+            <h5 class="fw-bold">Cota</h5>
+            <p>A menor parte do fundo que você pode comprar, representando sua participação nele.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card-glossario card h-100 shadow-sm d-flex align-items-center justify-content-center p-3">
+            <h5 class="fw-bold">DY</h5>
+            <p>Percentual pago em rendimentos mensais.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card-glossario card h-100 shadow-sm d-flex align-items-center justify-content-center p-3">
+            <h5 class="fw-bold">Patrimônio Líquido</h5>
+            <p>Valor total do fundo.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card-glossario card h-100 shadow-sm d-flex align-items-center justify-content-center p-3">
+            <h5 class="fw-bold">Liquidez</h5>
+            <p>Facilidade de vender ou comprar cotas.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card-glossario card h-100 shadow-sm d-flex align-items-center justify-content-center p-3">
+            <h5 class="fw-bold">P/VP</h5>
+            <p>Relação entre preço da cota e valor real do fundo.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card-glossario card h-100 shadow-sm d-flex align-items-center justify-content-center p-3">
+            <h5 class="fw-bold">Aporte</h5>
+            <p>Dinheiro investido regularmente.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card-glossario card h-100 shadow-sm d-flex align-items-center justify-content-center p-3">
+            <h5 class="fw-bold">Setor</h5>
+            <p>Tipo de imóvel ou ativo do fundo.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card-glossario card h-100 shadow-sm d-flex align-items-center justify-content-center p-3">
+            <h5 class="fw-bold">Diversificação</h5>
+            <p>Investir em vários FIIs para reduzir risco.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aprenda do zero -->
+  <section id="aprenda" class="container py-5">
+    <h1>📖 Aprenda do zero</h1>
+    <div class="accordion" id="accordionExample">
+      <!-- Módulo 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Módulo 1 - Iniciante: Primeiros Passos no Mundo dos FIIs
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>Objetivo:</strong> Compreender o que são Fundos Imobiliários, como funcionam e por que podem ser um ótimo investimento para iniciantes.
+            <br><br>
+            <strong>O que são FIIs?</strong><br>
+            FIIs são fundos que investem em imóveis ou dívidas do setor imobiliário. Você compra cotas e se torna dono de uma fração desses imóveis, recebendo rendimentos mensais como um "aluguel".
+            <br><strong>Resumindo:</strong> você vira sócio de shoppings, hospitais ou galpões sem comprar o imóvel inteiro.
+            <br><br>
+            <strong>Por que investir em FIIs?</strong>
+            <ul>
+              <li>Comece a partir de R$5,00</li>
+              <li>Renda mensal recorrente</li>
+              <li>Diversificação simples: vários imóveis em um único fundo</li>
+              <li>Facilidade de vender cotas em relação a imóveis físicos</li>
+            </ul>
+            <strong>Exemplo:</strong> com R$5, você já pode ter cotas de shoppings e galpões logísticos.
+            <br><br>
+            <strong>Como começar na prática?</strong>
+            <ol>
+              <li>Abra conta em uma corretora</li>
+              <li>Procure fundos listados na B3 (códigos terminam em 11)</li>
+              <li>Compre suas primeiras cotas</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Módulo 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Módulo 2 - Nível Intermediário: Escolhendo bons FIIs
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>Tipos de FIIs:</strong>
+            <ul>
+              <li>Tijolo: imóveis físicos (shoppings, hospitais, galpões)</li>
+              <li>Papel: títulos ligados ao mercado imobiliário (CRI)</li>
+              <li>Híbrido: mistura dos dois</li>
+              <li>FoFs: fundos que investem em outros FIIs</li>
+            </ul>
+            <strong>Exemplos:</strong>
+            <ul>
+              <li>HGLG11 — galpões (tijolo)</li>
+              <li>KNCR11 — CRIs (papel)</li>
+            </ul>
+            <strong>O que analisar antes de investir?</strong>
+            <ul>
+              <li>Vacância: imóveis vazios = menos renda</li>
+              <li>Gestão: bons gestores fazem diferença</li>
+              <li>Dividend Yield (DY): mostra % de rendimento</li>
+              <li>Liquidez: facilidade de negociar cotas</li>
+              <li>Segmento: cada setor reage diferente à economia</li>
+            </ul>
+            <strong>Armadilhas comuns:</strong>
+            <ul>
+              <li>Não invista só porque o DY está alto</li>
+              <li>Evite fundos concentrados em poucos imóveis ou inquilinos</li>
+              <li>Sempre leia os relatórios mensais</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Módulo 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Módulo 3 - Nível Avançado: Estratégias de Investidor
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>Montando sua carteira:</strong>
+            <ul>
+              <li>Conservador: mais fundos de papel (previsíveis)</li>
+              <li>Equilibrado: 50% tijolo + 50% papel</li>
+              <li>Arrojado: mais tijolo/híbridos, buscando valorização</li>
+            </ul>
+            <strong>Exemplo Equilibrado:</strong><br>
+            40% galpões/shoppings, 40% fundos de papel, 20% FoFs.
+            <br><br>
+            <strong>Gestão da carteira:</strong>
+            <ul>
+              <li>Ativa: acompanhar, trocar fundos, buscar oportunidades</li>
+              <li>Passiva: escolher fundos sólidos e reinvestir dividendos</li>
+            </ul>
+            <strong>Riscos que você precisa conhecer:</strong>
+            <ul>
+              <li>Juros altos — derrubam FIIs de papel</li>
+              <li>Crises — afetam shoppings e lajes corporativas</li>
+              <li>Gestão ruim — fundo perde valor</li>
+            </ul>
+            <strong>Como reduzir risco:</strong> diversifique, reinvista e acompanhe relatórios.
+            <br><br>
+            <strong>O segredo do longo prazo:</strong><br>
+            FIIs não são para ganhos rápidos, mas para renda contínua. Reinvestindo dividendos, sua renda cresce exponencialmente.
+            <br>Exemplo: quem começa recebendo R$100/mês e reinveste, em alguns anos pode estar recebendo R$200/mês, sem colocar mais dinheiro do bolso.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO FIIs -->
+  <section id="fiis" class="container py-5">
+    <div class="header">
+      <h1 class="main-title">FIIs</h1>
+    </div>
+
+    <div class="table-container">
+      <div class="metrics-header">
+        <div class="d-flex align-items-center">
+          <i class="fas fa-chart-line me-2"></i>
+          Ativo
+        </div>
+        <div class="text-center">Patrimônio Líquido</div>
+        <div class="text-center">DividendYield</div>
+        <div class="text-center">P/VP</div>
+        <div class="text-center">Liquidez Diária</div>
+        <div class="text-center">Cotação</div>
+      </div>
+
+      <div id="fiis-container">
+        <!-- Os FIIs serão inseridos aqui pelo JavaScript -->
+      </div>
+    </div>
+
+    <div class="pagination-container">
+      <button class="page-btn" id="prev-page" disabled>
+        <i class="fas fa-chevron-left me-2"></i>Anterior
+      </button>
+      <span class="page-info" id="page-info">Página 1</span>
+      <button class="page-btn" id="next-page">
+        Próxima<i class="fas fa-chevron-right ms-2"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- Radar do Mercado -->
+  <section id="radar" class="radar-mercado mt-5 container">
+    <div class="header text-center mb-4">
+      <h2 class="main-title" style="font-size: 2.5rem;">
+        <i class="fas fa-medal me-2"></i>Radar do Mercado
+      </h2>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="table-container h-100">
+          <div class="metrics-header text-center">
+            <i class="fas fa-donate me-2"></i>
+            Maiores Dividendos
+          </div>
+          <div id="maiores-dividendos"></div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="table-container h-100">
+          <div class="metrics-header text-center">
+            <i class="fas fa-chart-bar me-2"></i>
+            Maior Valor do Mercado
+          </div>
+          <div id="maior-valor-mercado"></div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="table-container h-100">
+          <div class="metrics-header text-center">
+            <i class="fas fa-chart-line me-2"></i>
+            Maiores Receitas
+          </div>
+          <div id="maiores-receitas"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script type="module" src="./js/montarPapeis.js"></script>
+</body>
+</html>
