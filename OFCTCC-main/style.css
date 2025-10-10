@@ -1,0 +1,122 @@
+/* NAVBAR SIMPLES E ALINHADA */
+.simple-navbar {
+  background: #1e1e1e !important;
+  border-bottom: 2px solid #ffffff;
+  padding: 0.8rem 0;
+}
+
+.simple-brand {
+  font-size: 1.5rem;
+  font-weight: 70;
+  color: #ffffff !important;
+  margin-right: 3rem;
+}
+
+.simple-nav {
+  gap: 0;
+  align-items: center;
+}
+
+.simple-link {
+  color: #ffffff !important;
+  font-weight: 500;
+  padding: 0.5rem 1.2rem !important;
+  margin: 0 0.1rem;
+  transition: all 0.5s ease;
+  border-radius: 0;
+  position: relative;
+}
+
+.simple-link:hover,
+.simple-link.active {
+  color: #7DFF01 !important;
+  background: transparent;
+}
+
+.simple-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #7DFF01;
+  transition: all 0.2s ease;
+  transform: translateX(-50%);
+}
+
+.simple-link:hover::after,
+.simple-link.active::after {
+  width: 80%;
+}
+
+/* Dropdown simples */
+.simple-dropdown {
+  background: #2d2d2d;
+  border: 1px solid #7DFF01;
+  border-radius: 0;
+  margin-top: 0;
+}
+
+.dropdown-item {
+  color: #ffffff;
+  padding: 0.6rem 1.2rem;
+  border-bottom: 1px solid #3d3d3d;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(125, 255, 1, 0.1);
+  color: #7DFF01;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+/* Botão Login */
+.simple-login-btn {
+  background: #7DFF01;
+  color: #1a1a1a;
+  font-weight: 600;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  margin-left: 2rem;
+}
+
+.simple-login-btn:hover {
+  background: #6CE600;
+  transform: translateY(-1px);
+}
+
+
+
+/* Ajuste do body */
+body {
+  padding-top: 70px;
+}
+
+/* Responsividade */
+@media (max-width: 991px) {
+  .simple-nav {
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  .simple-link {
+    padding: 0.8rem 1rem !important;
+    margin: 0.1rem 0;
+  }
+  
+  .simple-login-btn {
+    margin-left: 0;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  
+  .simple-dropdown {
+    text-align: center;
+  }
+}
