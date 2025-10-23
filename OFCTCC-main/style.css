@@ -651,3 +651,85 @@ body {
 }
 
 /* ------------------------------ SIMULADORES--------------------------- */
+body {
+  background-color: #0f0f0f;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== Simulador 1 ===== */
+.simulador1 {
+  background-color: #2e2e2e;
+  border: 3px solid #4CAF50;
+  border-radius: 20px;
+}
+
+.campo1 {
+  background-color: #e9e9e9;
+  border: none;
+  border-radius: 6px;
+  color: #000;
+  width: 40%;
+  height: 40px;
+  -moz-appearance: textfield;
+}
+
+.campo1::-webkit-outer-spin-button,
+.campo1::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#calcular1 {
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+#calcular1:hover {
+  background-color: #45a049;
+}
+
+.explicacoes1 p {
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+
+/* ===== Simulador 2 ===== */
+.simulador2 {
+  background-color: #2e2e2e;
+  border: 3px solid #4CAF50;
+  border-radius: 20px;
+}
+
+.campo2 {
+  background-color: #e9e9e9;
+  border: none;
+  border-radius: 6px;
+  color: #000;
+  width: 40%;
+  height: 40px;
+  -moz-appearance: textfield;
+}
+
+.campo2::-webkit-outer-spin-button,
+.campo2::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#calcular2 {
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+#calcular2:hover {
+  background-color: #45a049;
+}
+
+.explicacoes2 p {
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
