@@ -8,326 +8,54 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<!-- Material Symbols -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-  <style>
-      * {
-      font-family: 'Sora', sans-serif;
-    }
-    body {
-      background-color: #1E1E1E;
-      color: white;
-      padding-top: 80px; 
-    }
-
-  
-    /* Modais */
-    .modal-content {
-      border-radius: 12px;
-      padding: 15px;
-    }
-    .modal-header {
-      border-bottom: none;
-    }
-    .btn-close-custom {
-      background-color: #7DFF01;
-      border-radius: 50%;
-      padding: 10px;
-    }
-    .btn-submit {
-      background-color: #7DFF01;
-      color: black;
-      font-weight: bold;
-    }
-    .link-custom {
-      color: #000000;
-      font-size: 0.9rem;
-    }
-
-    /* Hero Section */
-   
-    .hero-title {
-      
-      font-size: 3rem;
-      font-weight:lighter;
-      color: #7DFF01;
-     
-    }
-    .hero-subtext {
-      color: #ffffff;
-      font-size: 1.2rem;
-   
-    }
-    .container-hero{
- background-color: #242323;
-   }
-
-    /* Antes de começar */
-    .card-custom {
-      position: relative;
-      border-radius: 15px;
-      padding: 30px;
-      background-color: #ffff;
-      width: 90%;
-      max-width: 1200px;
-      margin: 60px auto;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      color: #548723;
-      text-align: center;
-    }
-
-    .header-banner {
-      background-color: #548723;
-      color: white;
-      font-weight: bold;
-      padding: 10px 20px;
-      border-radius: 12px;
-      display: inline-block;
-      position: absolute;
-      top: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    }
-
-    .glossario-title {
-      border-radius: 15px;
-      padding: 30px;
-      background-color: #548723;
-      width: 70%;
-      max-width: 1200px;
-      margin: 40px auto;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      color: #ffffff;
-    }
-
-    /* Accordion */
-    .accordion-button {
-      background-color: #1a1919;
-      color: #f5f4f4;
-      font-weight: bold;
-    }
-    .accordion-button:not(.collapsed) {
-      background-color: #2b2a2a;
-      color: #fff;
-    }
-    .accordion-body {
-      background-color: #f9f9f9;
-      color: #030303;
-    }
-    .accordion-item {
-      border-radius: 10px;
-      margin-bottom: 15px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    /* Estilos dos FIIs */
-    .header {
-      text-align: center;
-      margin-bottom: 2rem;
-      padding-top: 2rem;
-    }
-
-    .main-title {
-      font-size: 4rem;
-      font-weight: 800;
-      color: #7DFF01;
-      text-shadow: 0 0 10px rgba(125, 255, 1, 0.3);
-      margin-bottom: 0.5rem;
-    }
-
-    .table-container {
-      background-color: #717274;
-      border-radius: 15px;
-      padding: 2rem;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    }
-
-    .metrics-header {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
-      gap: 1rem;
-      padding: 1rem 1.5rem;
-      background-color: rgba(30, 30, 30, 0.8);
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      color: #FFFFFF;
-      font-size: 1.1rem;
-    }
-
-    .fii-row {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
-      gap: 1rem;
-      padding: 1.5rem;
-      border: 2px solid rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      background-color: rgba(255, 255, 255, 0.05);
-      color: #FFFFFF;
-      transition: all 0.3s ease;
-      align-items: center;
-    }
-
-    .fii-row:hover {
-      background-color: rgba(125, 255, 1, 0.1);
-      border-color: #7DFF01;
-      transform: translateY(-2px);
-    }
-
-    .fii-ticker {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #FFFFFF;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 0.25rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .fii-name {
-      font-size: 0.9rem;
-      color: #CCCCCC;
-      margin: 0;
-      margin-left: 2rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .building-icon {
-      color: #7DFF01;
-      font-size: 1.3rem;
-      text-shadow: 0 0 8px rgba(125, 255, 1, 0.5);
-      flex-shrink: 0;
-    }
-
-    .metric-value {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #FFFFFF;
-      text-align: center;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .pagination-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 3rem;
-      gap: 1.5rem;
-    }
-
-    .page-btn {
-      background-color: #7DFF01;
-      color: #1E1E1E;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 700;
-      transition: all 0.3s ease;
-      font-size: 1rem;
-    }
-
-    .page-btn:hover:not(:disabled) {
-      background-color: #6CE600;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(125, 255, 1, 0.4);
-    }
-
-    .page-btn:disabled {
-      background-color: #4A4A4A;
-      color: #888888;
-      cursor: not-allowed;
-      transform: none;
-      box-shadow: none;
-    }
-
-    .page-info {
-      font-weight: 700;
-      color: #FFFFFF;
-      font-size: 1.1rem;
-    }
-
-    /* Radar do Mercado */
-    .radar-mercado .fii-row.radar-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      padding: 1rem !important;
-      margin-bottom: 0.5rem !important;
-      border: 2px solid rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      background-color: rgba(255, 255, 255, 0.05);
-      align-items: center;
-    }
-
-    .radar-mercado .fii-ticker {
-      font-size: 1.1rem !important;
-      justify-content: start !important;
-      margin-bottom: 0 !important;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .radar-mercado .metric-value {
-      font-size: 1.1rem !important;
-      text-align: center !important;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .text-success,
-    .text-warning,
-    .text-info {
-      color: #FFFFFF !important;
-      font-weight: bold;
-    }
-
-    /* Responsividade */
-    @media (max-width: 768px) {
-      .metrics-header,
-      .fii-row {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-        text-align: center;
-      }
-      
-      .fii-ticker {
-        justify-content: center;
-      }
-      
-      .fii-name {
-        margin-left: 0;
-      }
-      
-      .main-title {
-        font-size: 2.5rem;
-      }
-      
-      .radar-mercado .fii-row.radar-row {
-        grid-template-columns: 1fr;
-      }
-      
-      .hero-title {
-        font-size: 2rem;
-      }
-      
-      .hero-subtext {
-        font-size: 1rem;
-      }
-    }
-  </style>
+ 
 </head>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+// Initialize Swiper com navegação personalizada
+document.addEventListener('DOMContentLoaded', function() {
+  const swiper = new Swiper('.card-wrapper', {
+    loop: true,
+    spaceBetween: 30,
+    slidesPerView: 1,
+    
+    // Pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    
+    // Navegação personalizada (não usa as do Swiper)
+    navigation: false,
+    
+    // Responsive breakpoints
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    }
+  });
+
+  // Controle das setas personalizadas
+  document.querySelector('.carousel-nav-btn.next').addEventListener('click', function() {
+    swiper.slideNext();
+  });
+
+  document.querySelector('.carousel-nav-btn.prev').addEventListener('click', function() {
+    swiper.slidePrev();
+  });
+});
+</script>
 <body>
   <!-- NAVBAR -->
   <!-- NAVBAR SIMPLES E ALINHADA -->
@@ -726,8 +454,113 @@
   </section>
 <!---------- fim fiis-------------->
 
- 
+<!-- NOTÍCIAS EM DESTAQUE - SETAS FORA DO GRID -->
+<section class="news-carousel-section">
+  <div class="container">
+    <h1 class="section-title">Notícias em destaque</h1>
+    
+    <div class="carousel-container">
+      <div class="carousel-nav">
+        <button class="carousel-nav-btn prev">
+          <span class="material-symbols-rounded">chevron_left</span>
+        </button>
+        <button class="carousel-nav-btn next">
+          <span class="material-symbols-rounded">chevron_right</span>
+        </button>
+      </div>
 
+      <div class="card-wrapper swiper">
+        <ul class="card-list swiper-wrapper">
+          <!-- Notícia 1 -->
+          <li class="card-item ">
+            <a href="https://jornaldebrasilia.com.br/noticias/economia/policia-federal-banco-central-e-coaf-planejam-fortalecer-fiscalizacao-de-fundos-de-investimento" 
+               class="card-link" target="_blank">
+              <img src="https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2023/11/06061007/BC-1-768x432.jpg" 
+                   alt="Fiscalização de fundos" class="card-image">
+              <div class="card-content">
+                <p class="badge">Regulação</p>
+                <h2 class="card-title">Polícia Federal, Banco Central e Coaf planejam fortalecer fiscalização de fundos de investimento</h2>
+             
+              </div>
+            </a>
+          </li>
+
+          <!-- Notícia 2 -->
+          <li class="card-item swiper-slide">
+            <a href="https://valorinveste.globo.com/produtos/fundos-imobiliarios/noticia/2025/09/25/entenda-as-mudancas-em-fundos-imobiliarios-que-estao-em-jogo-com-a-mp-1303.ghtml" 
+               class="card-link" target="_blank">
+              <img src="https://s2-valor-investe.glbimg.com/O-mGeV-bqseBYYeS_T36NGTm5Ks=/0x0:2121x1414/1000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_f035dd6fd91c438fa04ab718d608bbaa/internal_photos/bs/2024/A/D/ZVVOR2TbKvR5LFU4QLFw/gettyimages-79671145.jpg" 
+                   alt="Mudanças em FIIs" class="card-image">
+              <div class="card-content">
+                <p class="badge">Legislação</p>
+                <h2 class="card-title">Entenda as mudanças em fundos imobiliários que estão em jogo com a MP 1303</h2>
+                
+              </div>
+            </a>
+          </li>
+
+          <!-- Notícia 3 -->
+          <li class="card-item swiper-slide">
+            <a href="https://www.gazetadopovo.com.br/economia/impostos-fiis-fiagros-haddad-mp1303" 
+               class="card-link" target="_blank">
+              <img src="https://media.gazetadopovo.com.br/2025/06/17143348/impostos-fiis-fiagros-haddad-mp1303-960x540.jpg.webp" 
+                   alt="Taxação de FIIs" class="card-image">
+              <div class="card-content">
+                <p class="badge">Tributação</p>
+                <h2 class="card-title">Haddad quer taxar fundos imobiliários e do agronegócio; veja o que muda</h2>
+             
+              </div>
+            </a>
+          </li>
+
+          <!-- Notícia 4 -->
+          <li class="card-item swiper-slide">
+            <a href="#" class="card-link">
+              <img src="https://via.placeholder.com/400x200/198754/ffffff?text=Mercado+Imobiliário" 
+                   alt="Mercado imobiliário" class="card-image">
+              <div class="card-content">
+                <p class="badge">Mercado</p>
+                <h2 class="card-title">Mercado imobiliário comercial tem alta na vacância, aponta estudo</h2>
+              
+              </div>
+            </a>
+          </li>
+
+          <!-- Notícia 5 -->
+          <li class="card-item swiper-slide">
+            <a href="#" class="card-link">
+              <img src="https://via.placeholder.com/400x200/6f42c1/ffffff?text=Imposto+Renda" 
+                   alt="Imposto de Renda" class="card-image">
+              <div class="card-content">
+                <p class="badge">Declaração</p>
+                <h2 class="card-title">Como declarar rendimentos de FIIs no Imposto de Renda 2024</h2>
+                
+              </div>
+            </a>
+          </li>
+
+          <!-- Notícia 6 -->
+          <li class="card-item swiper-slide">
+            <a href="#" class="card-link">
+              <img src="https://via.placeholder.com/400x200/fd7e14/ffffff?text=Split+de+Cotas" 
+                   alt="Split de cotas" class="card-image">
+              <div class="card-content">
+                <p class="badge">Fundos</p>
+                <h2 class="card-title">Fundo de papel XPTO11 aprova desdobramento (split) de cotas</h2>
+              
+              </div>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ----------------- final card--------- -->
   <!-- Radar do Mercado -->
   <section id="radar" class="radar-mercado mt-5 container">
     <div class="header text-center mb-4">
@@ -768,6 +601,8 @@
       </div>
     </div>
   </section>
+  <!-- ------------------SIMULADORES--------------------------- -->
+   
 
 
 
