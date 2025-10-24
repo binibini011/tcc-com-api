@@ -18,3 +18,5 @@ document.getElementById("calcular1").addEventListener("click", function () {
     P.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 });
 
+
+

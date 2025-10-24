@@ -351,7 +351,7 @@
     }
 
     .radar-mercado .fii-ticker {
-      font-size: 1.1rem !important;
+      font-size: 1rem !important;
       justify-content: start !important;
       margin-bottom: 0 !important;
       overflow: hidden;
@@ -377,7 +377,7 @@
       .metrics-header,
       .fii-row {
         grid-template-columns: 1fr;
-        gap: 0.5rem;
+        gap: 10rem;
         text-align: center;
       }
       
@@ -394,7 +394,7 @@
       }
       
       .radar-mercado .fii-row.radar-row {
-        grid-template-columns: 1fr;
+        grid-template-columns: 2fr;
       }
       
       .hero-title {
@@ -732,4 +732,66 @@ body {
 .explicacoes2 p {
   margin-bottom: 15px;
   font-size: 0.95rem;
+}
+
+
+
+
+
+/* ===========================RODAPE=========================== */
+footer {
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+  padding: 40px 0;
+}
+
+footer a {
+  color: #f5f5f5;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #4CAF50;
+}
+
+.footer-logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #4CAF50;
+}
+
+.social-icons a {
+  font-size: 1.3rem;
+  margin-right: 15px;
+  color: #f5f5f5;
+}
+
+.social-icons a:hover {
+  color: #4CAF50;
+}
+
+.btn-download {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: #fff;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-download:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+  color: #fff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 15px;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #bbb;
 }

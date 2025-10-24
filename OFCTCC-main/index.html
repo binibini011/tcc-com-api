@@ -8,6 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
   <!-- Swiper CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <!-- Material Symbols -->
@@ -58,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <body>
   <!-- NAVBAR -->
-  <!-- NAVBAR SIMPLES E ALINHADA -->
+  
 <nav class="navbar navbar-expand-lg navbar-dark simple-navbar fixed-top">
   <div class="container">
     <a class="navbar-brand simple-brand" href="#">Invest Fácil</a>
@@ -90,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </a>
           <ul class="dropdown-menu simple-dropdown">
             <li><a class="dropdown-item" href="#fiis">FIIs (valores/relatórios)</a></li>
-            <li><a class="dropdown-item" href="#">Notícias</a></li>
+            <li><a class="dropdown-item" href="#noticias">Notícias</a></li>
             <li><a class="dropdown-item" href="#radar">Radar do mercado</a></li>
           </ul>
         </li>
@@ -418,7 +419,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </section>
 
-  <!-- SEÇÃO FIIs -->
+   <!-- SEÇÃO FIIs -->
   <section id="fiis" class="container py-5">
     <div class="header">
       <h1 class="main-title">FIIs</h1>
@@ -454,8 +455,8 @@ document.addEventListener('DOMContentLoaded', function() {
   </section>
 <!---------- fim fiis-------------->
 
-<!-- NOTÍCIAS EM DESTAQUE - SETAS FORA DO GRID -->
-<section class="news-carousel-section">
+<!-- NOTÍCIAS EM DESTAQUE --->
+<section  id="noticias" class="news-carousel-section">
   <div class="container">
     <h1 class="section-title">Notícias em destaque</h1>
     
@@ -515,12 +516,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
           <!-- Notícia 4 -->
           <li class="card-item swiper-slide">
-            <a href="#" class="card-link">
-              <img src="https://via.placeholder.com/400x200/198754/ffffff?text=Mercado+Imobiliário" 
+            <a href="https://melhorinvestimento.net/noticias/caixa-fii-imoveis-correios-recuperacao-financeira" class="card-link" target="_blank">
+              <img src="https://melhorinvestimento.net/wp-content/uploads/2025/10/Correios-768x512.jpg" 
                    alt="Mercado imobiliário" class="card-image">
               <div class="card-content">
                 <p class="badge">Mercado</p>
-                <h2 class="card-title">Mercado imobiliário comercial tem alta na vacância, aponta estudo</h2>
+                <h2 class="card-title">Caixa vai criar FII com imóveis dos Correios para reforçar finanças da estatal</h2>
               
               </div>
             </a>
@@ -528,12 +529,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
           <!-- Notícia 5 -->
           <li class="card-item swiper-slide">
-            <a href="#" class="card-link">
-              <img src="https://via.placeholder.com/400x200/6f42c1/ffffff?text=Imposto+Renda" 
+            <a href="https://investidor10.com.br/noticias/ipca-15-de-outubro-deve-recuar-para-0-24-com-queda-na-conta-de-luz-116252" class="card-link" target="_blank">
+              <img src="https://investidor10.com.br/storage/news/68fa9d2e51f15.jpg" 
                    alt="Imposto de Renda" class="card-image">
               <div class="card-content">
-                <p class="badge">Declaração</p>
-                <h2 class="card-title">Como declarar rendimentos de FIIs no Imposto de Renda 2024</h2>
+                <p class="badge">Economia</p>
+                <h2 class="card-title">IPCA-15 de outubro deve recuar para 0,24% com queda na conta de luz</h2>
                 
               </div>
             </a>
@@ -541,12 +542,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
           <!-- Notícia 6 -->
           <li class="card-item swiper-slide">
-            <a href="#" class="card-link">
-              <img src="https://via.placeholder.com/400x200/fd7e14/ffffff?text=Split+de+Cotas" 
+            <a href="https://www.statusinvest.com.br/noticias/fii-xpml11-operacao-cinco-shoppings-centers" class="card-link" target="_blank">
+              <img src="https://files.sunoresearch.com.br/suno-insight-wp/uploads/2025/10/dividendos-de-FIIs-dinheiro-jpg-1-800x450.webp" 
                    alt="Split de cotas" class="card-image">
               <div class="card-content">
-                <p class="badge">Fundos</p>
-                <h2 class="card-title">Fundo de papel XPTO11 aprova desdobramento (split) de cotas</h2>
+                <p class="badge">FIIs</p>
+                <h2 class="card-title">XPML11 amplia portfólio e movimenta R$ 300 milhões com nova operação</h2>
               
               </div>
             </a>
@@ -682,11 +683,58 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 
 
+
+  <!-- RODAPÉ -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <!-- Logo -->
+      <div class="col-md-4 mb-3">
+        <span class="footer-logo">Invest Fácil</span>
+        <p class="mt-2">Facilitando seus investimentos de forma simples e segura.</p>
+      </div>
+
+      <!-- Links -->
+      <div class="col-md-4 mb-3">
+        <h5>Links úteis</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">Início</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Glossário</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+
+      <!-- Redes sociais + botão -->
+      <div class="col-md-4 mb-3 text-md-start text-center">
+        <h5>Siga-nos</h5>
+        <div class="social-icons mb-3">
+          <a href="#" class="facebook-icon"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram-icon"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin-icon"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="youtube-icon"><i class="bi bi-youtube"></i></a>
+        </div>
+
+        <!-- Botão de download -->
+        <a href="#" class="btn btn-download">
+          <i class="bi bi-download me-2"></i>Baixe o App
+        </a>
+      </div>
+    </div>
+
+    <!-- parte de baixo -->
+    <div class="footer-bottom">
+      &copy; 2025 Invest Fácil. Todos os direitos reservados.
+    </div>
+  </div>
+</footer>
+
   <!-- Bootstrap JS -->
+   <script type="module" src="./js/carteira.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./js/script.js"></script>
   <script src="./js/script02.js"></script>
-
   <script type="module" src="./js/montarPapeis.js"></script>
+
 </body>
 </html>
