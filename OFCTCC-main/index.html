@@ -101,13 +101,13 @@ document.addEventListener('DOMContentLoaded', function() {
             Simulador
           </a>
           <ul class="dropdown-menu simple-dropdown">
-            <li><a class="dropdown-item" href="#">Simulação de investimentos</a></li>
-            <li><a class="dropdown-item" href="#">Simulação de gastos</a></li>
+            <li><a class="dropdown-item" href="#sim1">Simulação de investimentos</a></li>
+            <li><a class="dropdown-item" href="#sim2">Simulação de gastos</a></li>
           </ul>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link simple-link" href="#">Carteira</a>
+          <a class="nav-link simple-link" href="#carteira">Carteira</a>
         </li>
       </ul>
       
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </p>
         </div>
         <div class="col-md-1 d-none d-md-block">
-          <div style="border-left: 2.5px solid #00ff55; height: 250px;"></div>
+          <div style="border-left: 2.5px solid #548723; height: 250px;"></div>
         </div>
         <div class="col-md-4 text-center">
           <img src="img/invest-removebg-preview.png" alt="Logo Invest Fácil" class="img-fluid" style="max-width: 800px; width: 100%;">
@@ -195,10 +195,10 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="container">
       <div class="row align-items-center">  
         <div class="col-md-4 text-center mb-4 mb-md-0">
-          <img src="img/Gemini_Generated_Image_h8s8jsh8s8jsh8s8.png" alt="Logo Invest Fácil" class="img-fluid" style="max-width: 800px; width: 100%;">
+          <img src="img/Gemini_Generated_Image_h8s8jsh8s8jsh8s8.png" alt="Logo Invest Fácil" class="img-fluid" style="max-width: 800px; width: 100%; border-radius: 20px;">
         </div>
         <div class="col-md-1 d-none d-md-block">
-          <div style="border-left: 2.5px solid #00ff55; height: 250px;"></div>
+          <div style="border-left: 2.5px solid #548723; height: 250px;"></div>
         </div>
         <div class="col-md-7">
           <h2 class="fw-bold mb-3"> Por que investir?</h2>
@@ -220,9 +220,12 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Antes de começar -->
   <div class="card-custom">
     <div class="header-banner">
-      Antes de começar
+      <h2>Antes de começar</h2>
     </div>
-    <h2>O que são FIIs?</h2>
+     <div class="title-card">
+<h3>O que são FIIs?</h3>
+     </div>
+    
     <p>
       FIIs, ou Fundos de Investimento Imobiliário, são investimentos em que você compra cotas e se torna dono de uma parte de imóveis ou de títulos ligados ao mercado imobiliário. 
       Em troca, recebe rendimentos mensais, que funcionam como um aluguel, além da possibilidade de valorização das cotas. 
@@ -231,11 +234,13 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 
   <!-- Glossário -->
-  <section class="py-5 text-center">
+  <section class="py-10 text-center">
     <div class="container">
       <div class="row g-3">
-        <h2 class="fw-bold glossario-title">Glossário</h2>
-
+        <div>
+          <h2 class="fw-bold glossario-title">Glossário</h2>
+        </div>
+      
         <div class="col-md-4">
           <div class="card-glossario card h-100 shadow-sm d-flex align-items-center justify-content-center p-3">      
             <h5 class="fw-bold">FII</h5>
@@ -303,8 +308,15 @@ document.addEventListener('DOMContentLoaded', function() {
   </section>
 
   <!-- Aprenda do zero -->
-  <section id="aprenda" class="container py-5">
-    <h1>📖 Aprenda do zero</h1>
+  <section id="aprenda" class="container py-5 " >
+    <div class="aprenda-title">
+      <div>
+      <i class="fas fa-book-reader me-2" style="color: #fff;"></i> 
+      </div>
+       <h1> Aprenda do zero </h1>
+    </div>
+   
+    
     <div class="accordion" id="accordionExample">
       <!-- Módulo 1 -->
       <div class="accordion-item">
@@ -569,11 +581,10 @@ document.addEventListener('DOMContentLoaded', function() {
         <i class="fas fa-medal me-2"></i>Radar do Mercado
       </h2>
     </div>
-
-    <div class="row">
+ <div class="row">
       <div class="col-md-4 mb-4">
         <div class="table-container h-100">
-          <div class="metrics-header text-center">
+          <div class="metrics-header-radar text-center">
             <i class="fas fa-donate me-2"></i>
             Maiores Dividendos
           </div>
@@ -583,7 +594,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       <div class="col-md-4 mb-4">
         <div class="table-container h-100">
-          <div class="metrics-header text-center">
+          <div class="metrics-header-radar text-center">
             <i class="fas fa-chart-bar me-2"></i>
             Maior Valor do Mercado
           </div>
@@ -593,22 +604,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
       <div class="col-md-4 mb-4">
         <div class="table-container h-100">
-          <div class="metrics-header text-center">
+          <div class="metrics-header-radar text-center">
             <i class="fas fa-chart-line me-2"></i>
             Maiores Receitas
           </div>
           <div id="maiores-receitas"></div>
         </div>
+   
       </div>
     </div>
   </section>
  <!-- ================= SIMULAÇÃO 1 ================= -->
+  <section id="sim1">
   <div class="container py-5 text-center">
     <h3 class="fw-bold mb-4">Simulação de Investimento <br> para atingir um valor</h3>
 
     <div class="row justify-content-start align-items-center">
       <div class="col-md-7">
-        <div class="simulador1 p-4 rounded-4">
+        <div class="simulador1 p-4 rounded-4 text-dark">
 
           <div class="d-flex justify-content-between align-items-center mb-3">
             <label class="fw-bold me-3">Taxa “Real” Mensal (%)</label>
@@ -641,8 +654,10 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
   </div>
+    </section>
 
    <!-- ================= SIMULADOR 2 ================= -->
+    <section id="sim2">
   <div class="container py-5">
     <h3 class="fw-bold mb-4 text-center">Simulação de Investimento<br>para Fruição da renda</h3>
 
@@ -656,7 +671,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
 
       <div class="col-md-7 offset-md-1">
-        <div class="simulador2 p-4 rounded-4">
+        <div class="simulador2 p-4 rounded-4 text-dark">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <label class="fw-bold me-3">Valor Inicial</label>
             <input id="valorInicial2" type="number" class="form-control campo2 text-center" placeholder="Ex: 100000">
@@ -681,6 +696,62 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
   </div>
+   </section>
+
+   <!-- carteira; -->
+
+<section id="carteira" style="background-color:#C0DFA2; padding:60px 0;">
+  <div class="container text-center">
+    <h1 style="color:#548723; font-weight:800;">Sua carteira</h1>
+    <h4 style="color:#2b2b2b; margin-top:10px;">
+      Aqui você pode salvar os ativos que você possui ou que está acompanhando.
+    </h4>
+
+    <!-- Retângulo arredondado -->
+    <div class="carteira-box mt-5 p-4 rounded-4 mx-auto" style="background:#fff; max-width:1000px; text-align:left;">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2  class= "my-2 "style="color:#000;">FII</h2>
+    <button id="btnAdicionar" class="btn-add-fii">
+      <i class="bi bi-plus-lg"></i> Adicionar
+    </button>
+  </div>
+
+  <!-- Cabeçalho da tabela -->
+  <div class="fii-header text-dark text-start my-2">
+    <span class="fii-header-item">Fundos</span>
+    <span class="fii-header-item">Patrimônio Líquido</span>
+    <span class="fii-header-item">Dividend Yield</span>
+    <span class="fii-header-item">P/VP</span>
+    <span class="fii-header-item">Liquidez Diária</span>
+    <span class="fii-header-item">Cotação</span>
+  </div>
+
+  <div id="carteiraLista" class="d-flex flex-column gap-3"></div>
+</div>
+
+
+      <!-- Lista de FIIs -->
+      <div id="carteiraLista" class="d-flex flex-column gap-3"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal de Adição -->
+<div class="modal fade" id="modalAdicionarFII" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title">Adicionar FII</h5>
+        <button type="button" class="btn-close btn-close-white btn-close-custom" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <input type="text" id="inputBuscaFII" class="form-control mb-3" placeholder="Pesquisar por nome do FII...">
+        <div id="listaFIIsModal" style="max-height:400px; overflow-y:auto;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 
@@ -734,6 +805,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./js/script.js"></script>
   <script src="./js/script02.js"></script>
+  <script type="module" src="./js/carteira.js"></script>
   <script type="module" src="./js/montarPapeis.js"></script>
 
 </body>
