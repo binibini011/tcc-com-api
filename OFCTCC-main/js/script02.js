@@ -7,14 +7,12 @@ document.getElementById("calcular2").addEventListener("click", function () {
   const botao = document.getElementById("calcular2");
 
   if (isNaN(valorInicial) || isNaN(taxaMensal) || isNaN(retiradaMensal) || taxaMensal <= 0) {
-    resultado.innerHTML = "Preencha todos os campos corretamente!";
-    resultado.style.color = "#ff4d4d";
     botao.textContent = "Preencha todos os campos!";
     return;
   }
 
   if (retiradaMensal <= valorInicial * taxaMensal) {
-    resultado.style.color = "#4CAF50";
+    resultado.style.color = "#000000ff";
     resultado.innerHTML = "O seu dinheiro nunca irá acabar com base neste cenário proposto.";
     botao.textContent = "Total em Anos: ∞";
     return;
