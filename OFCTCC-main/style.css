@@ -212,6 +212,38 @@
     }
 
  /* Estilos dos FIIs */
+ /* ===================== SEÇÃO APRENDA DO ZERO ===================== */
+.aprenda-title {
+  display: flex;
+  flex-direction: column;       /* ícone em cima, título embaixo */
+  align-items: center;          /* centraliza tudo */
+  justify-content: center;
+  text-align: center;
+  gap: 10px;                    /* espaço entre ícone e título */
+  margin-bottom: 2rem;
+}
+
+.aprenda-title i {
+  font-size: 3rem;              /* tamanho do ícone */
+  color: #7DFF01;               /* verde padrão do site */
+  text-shadow: 0 0 12px rgba(125, 255, 1, 0.4); /* brilho suave */
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.aprenda-title i:hover {
+  transform: scale(1.15);
+  text-shadow: 0 0 18px rgba(125, 255, 1, 0.6);
+}
+
+.aprenda-title h1 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #7DFF01;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
     .header {
       text-align: center;
       margin-bottom: 2rem;
@@ -235,7 +267,7 @@
 
     .metrics-header {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+     grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 140px;
       gap: 1rem;
       padding: 1rem 1.5rem;
       background-color: rgba(30, 30, 30, 0.8);
@@ -805,6 +837,32 @@
   font-size: 0.9rem;
   color: #555;
 }
+/* ===================== CABEÇALHO DA CARTEIRA (FINAL) ===================== */
+.metrics-header-carteira {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 140px; /* mesmo grid do .fii-item */
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(30, 30, 30, 0.85);
+  border-radius: 10px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  white-space: nowrap; /* impede que quebre linha */
+  text-align: center;
+}
+
+.metrics-header-carteira div:first-child {
+  text-align: left; /* "Fundos" alinhado à esquerda */
+  padding-left: 0.3rem;
+}
+
+.metrics-header-carteira div:last-child {
+  text-align: right; /* "Ações" alinhado à direita */
+  padding-right: 0.3rem;
+}
 
 .metric {
   text-align: center;
@@ -852,8 +910,10 @@
 /* Modal de Adição */
 #listaFIIsModal .fii-item {
   grid-template-columns: 2fr 2fr 1fr 1fr auto;
-  background-color: rgba(255,255,255,0.05);
+  background-color: #ccc;
   border: 1px solid #ddd;
+  padding: 1rem; 
+
 }
 /* Cabeçalho da tabela de FIIs */
 .fii-header {
@@ -877,9 +937,46 @@
 }
 .status {
   display: inline-block;
-  width: 120px; /* mantém o alinhamento */
+  width: 120px;
   text-align: center;
 }
+/* --- SEÇÃO CARTEIRA --- */
+#carteiraLista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fii-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1.2fr; /* mesma proporção do header */
+  align-items: center;
+  padding: 1rem;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+
+.fii-acoes {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.metric {
+  text-align: center;
+  font-weight: 500;
+}
+
+.fii-nome {
+  font-weight: 700;
+  color: #548723;
+  text-align: left;
+}
+
 
 
 

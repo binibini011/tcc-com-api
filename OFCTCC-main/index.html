@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/meuicon.png">
   <title>Invest Fácil</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -14,7 +15,7 @@
 <!-- Material Symbols -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
 
- 
+
 </head>
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -698,8 +699,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
    </section>
 
-   <!-- carteira; -->
-
+<!-- ===================== CARTEIRA ===================== -->
 <section id="carteira" style="background-color:#C0DFA2; padding:60px 0;">
   <div class="container text-center">
     <h1 style="color:#548723; font-weight:800;">Sua carteira</h1>
@@ -716,37 +716,57 @@ document.addEventListener('DOMContentLoaded', function() {
     </button>
   </div>
 
-  <!-- Cabeçalho da tabela -->
-  <div class="fii-header text-dark text-start my-2">
-    <span class="fii-header-item">Fundos</span>
-    <span class="fii-header-item">Patrimônio Líquido</span>
-    <span class="fii-header-item">Dividend Yield</span>
-    <span class="fii-header-item">P/VP</span>
-    <span class="fii-header-item">Liquidez Diária</span>
-    <span class="fii-header-item">Cotação</span>
-  </div>
 
-  <div id="carteiraLista" class="d-flex flex-column gap-3"></div>
-</div>
-
-
-      <!-- Lista de FIIs -->
-      <div id="carteiraLista" class="d-flex flex-column gap-3"></div>
+    <!-- Cabeçalho das colunas -->
+    <div class="metrics-header-carteira">
+      <div>Fundos</div>
+      <div>Patrimônio Líquido</div>
+      <div>Dividend Yield</div>
+      <div>P/VP</div>
+      <div>Liquidez Diária</div>
+      <div>Cotação</div>
     </div>
+
+    <!-- Lista dos FIIs da carteira -->
+    <div id="carteiraLista"></div>
   </div>
 </section>
 
-<!-- Modal de Adição -->
+<!-- ===================== MODAL ADICIONAR FII ===================== -->
 <div class="modal fade" id="modalAdicionarFII" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content text-dark">
-      <div class="modal-header">
-        <h5 class="modal-title">Adicionar FII</h5>
-        <button type="button" class="btn-close btn-close-white btn-close-custom" data-bs-dismiss="modal"></button>
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" >Adicionar FII à Carteira</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
+
       <div class="modal-body">
-        <input type="text" id="inputBuscaFII" class="form-control mb-3" placeholder="Pesquisar por nome do FII...">
-        <div id="listaFIIsModal" style="max-height:400px; overflow-y:auto;"></div>
+        <!-- Filtros -->
+        <div class="row mb-3">
+          <div class="col-md-6 mb-2">
+            <input
+              type="text"
+              id="inputBuscaFII"
+              class="form-control"
+              placeholder="Pesquisar FII por nome ou código..."
+            />
+          </div>
+          <div class="col-md-6 mb-2">
+            <select id="filtroFII" class="form-select">
+              <option value="">Todos os FIIs</option>
+              <option value="maiorValor">Maior Valor</option>
+              <option value="maiorDY">Maior Dividend Yield</option>
+              <option value="maiorPL">Maior Patrimônio</option>
+              <option value="maiorLiquidez">Maior Liquidez</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Lista dos FIIs disponíveis -->
+        <div id="listaFIIsModal" style="max-height: 450px; overflow-y: auto;">
+          <!-- FIIs renderizados dinamicamente pelo JS -->
+        </div>
       </div>
     </div>
   </div>
